@@ -20,15 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.imageArray = [NSMutableArray array];
-    [self.imageArray addObject:[UIImage imageNamed:@"1.jpeg"]];
-    [self.imageArray addObject:[UIImage imageNamed:@"2.jpeg"]];
-    [self.imageArray addObject:[UIImage imageNamed:@"3.jpeg"]];
-    [self.imageArray addObject:[UIImage imageNamed:@"4.jpeg"]];
-    [self.imageArray addObject:[UIImage imageNamed:@"5.jpeg"]];
-    [self.imageArray addObject:[UIImage imageNamed:@"6.jpeg"]];
-    [self.imageArray addObject:[UIImage imageNamed:@"7.jpeg"]];
-    [self.imageArray addObject:[UIImage imageNamed:@"8.jpeg"]];
-    
+    for (int i = 1; i<9; i++) {
+        [self.imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%zd.jpeg",i]]];
+    }
+
     self.carView = [[FGCarouselView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 150)];
     self.carView.backgroundColor = [UIColor lightGrayColor];
     self.carView.imageArray = self.imageArray;
